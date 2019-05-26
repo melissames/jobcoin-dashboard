@@ -34,6 +34,7 @@ class Transfer extends Component {
 
 
   render() {
+    // console.log(this.props.user)
     return (
       <div className="border transfer">
          <h1>Send Jobcoin</h1>

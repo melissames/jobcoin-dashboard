@@ -8,15 +8,13 @@ import '../stylesheets/dashboard.css';
 class Dashboard extends Component {
 
   render() {
-    console.log(this.props)
+    console.log(this.props.userName)
     return (
       <div className="dashboard">
           <Nav userName={this.props.userName}/>
           <div className="dashboard-container">
-            <Balance 
-              balance={this.props.userData.balance}
-              user={this.props.userName}/>
-            <Transfer />
+            <Balance balance={this.props.userData.balance} />
+            <Transfer user={this.props.userName} />
             <HistoryGraph />
           </div> 
       </div>
