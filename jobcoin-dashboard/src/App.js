@@ -7,8 +7,7 @@ class App extends Component {
 
     state = {
       userName: '',
-      userData: null,
-      submitted: false
+      userData: null
   }
 
   handleLogInChange = e => {
@@ -18,7 +17,7 @@ class App extends Component {
   handleLogInSubmit = e => {
     e.preventDefault()
 
-    fetch(`http://jobcoin.gemini.com/nuclei/api/addresses/${this.state.username}`)
+    fetch(`https://jobcoin.gemini.com/nuclei/api/addresses/${this.state.userName}`)
         .then(res => res.json())
         .then(json => this.setState({userData: json}))
         .catch(err => console.log(err))
@@ -26,6 +25,7 @@ class App extends Component {
   }
 
   render () {
+
     return (
       <div className="App">
         {this.state.userData

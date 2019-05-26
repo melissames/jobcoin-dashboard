@@ -1,4 +1,4 @@
-.signin-form {
+.signin-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,6 +6,15 @@
     height: 80vh;
 }
 
+.signin-form {
+    width: 300px;
+    border: 1px solid #808080;
+    border-radius: 3px;
+}
+
+.login-logo {
+    height: 100px;
+}
 
 .form-inputs {
     display: flex;

@@ -6,7 +6,13 @@ class Nav extends Component {
   render() {
     return (
       <div className="nav">
-         {this.props.userName} 
+        <div>
+          {this.props.userName} 
+        </div>
+        <div>
+          <span>Signed In </span>
+          <span> Sign Out</span>
+        </div>
       </div>
     );
   }

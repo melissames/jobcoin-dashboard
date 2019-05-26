@@ -1,0 +1,5 @@
+.transfer {
+    position: absolute;
+    transform: translate(0%, 250%);
+    width: 30%;
+}
