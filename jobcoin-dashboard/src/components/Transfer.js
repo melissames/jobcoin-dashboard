@@ -30,20 +30,25 @@ class Transfer extends Component {
     }).then(res => res.json())
       .then(json => console.log(json))
       .catch(err => console.log(err))
+
+    document.getElementById("transfer-form").reset()
+
+    setTimeout(() => {
+      this.props.fetchUserData()
+    }, 1000)
   }
 
 
   render() {
-    // console.log(this.props.user)
     return (
       <div className="border transfer">
          <h1>Send Jobcoin</h1>
-         <form onSubmit={this.handleSubmit}>
+         <form id="transfer-form" onSubmit={this.handleSubmit}>
            <label>Destination Address</label>
            <input type="text" name="destinationAddress" onChange={this.handleChange} />
            <label>Amount to Send</label>
-           <input type="number" name="amount" onChange={this.handleChange}/>
-           <input type="submit" value="Amount to Send"/>
+           <input type="number" step="any" name="amount" onChange={this.handleChange}/>
+           <input type="submit" value="Send Jobcoins"/>
          </form>
       </div>
     );

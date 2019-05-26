@@ -10,8 +10,15 @@ class Nav extends Component {
           {this.props.userName} 
         </div>
         <div>
-          <span>Signed In </span>
-          <span> Sign Out</span>
+          <span 
+            className="selected">
+            Signed In 
+          </span>
+          <span 
+            className="selected" 
+            onClick={this.props.handleLogOut}> 
+            Sign Out
+          </span>
         </div>
       </div>
     );

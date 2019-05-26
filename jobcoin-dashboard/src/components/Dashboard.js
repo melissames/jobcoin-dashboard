@@ -8,14 +8,18 @@ import '../stylesheets/dashboard.css';
 class Dashboard extends Component {
 
   render() {
-    console.log(this.props.userName)
+    console.log(this.props)
     return (
       <div className="dashboard">
-          <Nav userName={this.props.userName}/>
+          <Nav 
+            userName={this.props.userName}
+            handleLogOut={this.props.handleLogOut}/>
           <div className="dashboard-container">
             <Balance balance={this.props.userData.balance} />
-            <Transfer user={this.props.userName} />
-            <HistoryGraph />
+            <Transfer 
+              user={this.props.userName} 
+              fetchUserData={this.props.fetchUserData}/>
+            <HistoryGraph transactions={this.props.userData}/>
           </div> 
       </div>
     );
