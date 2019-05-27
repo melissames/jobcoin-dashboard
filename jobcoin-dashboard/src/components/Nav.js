@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div>
-          {this.props.userName} 
+          {this.props.user} 
         </div>
         <div>
           <span 
