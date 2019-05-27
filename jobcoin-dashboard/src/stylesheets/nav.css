@@ -11,3 +11,7 @@
 .selected:hover {
     color: #57D6F5;
 }
+
+.logo {
+    height: 15px;
+}

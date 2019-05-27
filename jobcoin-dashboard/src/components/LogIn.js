@@ -10,10 +10,11 @@ class LogIn extends Component {
         <img src={logo} alt="" className="login-logo"/>
         <form  className="signin-form" onSubmit={this.props.handleSubmit}>
           <h3>Welcome! Sign in with your JobCoin Address</h3>
+          <div className="line"></div>
           <div className="form-inputs">
-            <label>JobCoin Address</label>
-            <input type="text" onChange={this.props.handleChange}/>
-            <input type="submit" value="Sign In"/>
+            <label className="form-spacing">JobCoin Address</label>
+            <input className="form-spacing input" type="text" onChange={this.props.handleChange}/>
+            <input className="button form-spacing" type="submit" value="Sign In"/>
           </div>
         </form>
       </div>

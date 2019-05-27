@@ -19,10 +19,21 @@ const HistoryGraph = props => {
     }
   })
 
+  const timeOptions = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  }
+
   let dates = transactions.map(function(transaction) {
     let date = new Date(transaction.timestamp)
-    return new Intl.DateTimeFormat('en-US').format(date)
+    return new Intl.DateTimeFormat('en-US', timeOptions).format(date)
   })
+
+
 
   dates.unshift("Account Opened")
 
@@ -30,16 +41,25 @@ const HistoryGraph = props => {
     labels: dates,
     datasets: [
       {
-        label: "Balance Over Time",
-        data: transactionData
+        label: "Balance",
+        data: transactionData,
+        backgroundColor: '#57D6F5',
+        pointBackgroundColor: '#57D6F5'
       }
     ]
   }
 
+  const options = {
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Jobcoin History Graph'
+    }
+  }
+
   return (
     <div className="border history-graph">
-      <h1>Jobcoin History Graph</h1>
-      <Line data={data} />
+      <Line data={data} options={options}/>
     </div>
   );
 

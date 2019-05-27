@@ -40,13 +40,23 @@ class Transfer extends Component {
   render() {
     return (
       <div className="border transfer">
-         <h1>Send Jobcoin</h1>
+         <h4>Send Jobcoin</h4>
+         <div className="line"></div>
          <form id="transfer-form" onSubmit={this.handleSubmit}>
-           <label>Destination Address</label>
-           <input type="text" name="destinationAddress" onChange={this.handleChange} />
-           <label>Amount to Send</label>
-           <input type="number" step="any" name="amount" onChange={this.handleChange}/>
-           <input type="submit" value="Send Jobcoins"/>
+           <label className="form-spacing">Destination Address</label>
+           <input  
+              className="form-spacing input" 
+              type="text" 
+              name="destinationAddress" 
+              onChange={this.handleChange} />
+           <label  className="form-spacing">Amount to Send</label>
+           <input  
+              className="form-spacing input" 
+              type="number" 
+              step=".00000000000001" 
+              name="amount" 
+              onChange={this.handleChange}/>
+           <input className="button form-spacing" type="submit" value="Send Jobcoins"/>
          </form>
       </div>
     );

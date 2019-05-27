@@ -7,9 +7,12 @@ class Nav extends Component {
     return (
       <div className="nav">
         <div>
-          {this.props.user} 
+          <strong>{this.props.user}</strong>
         </div>
         <div>
+          <span>
+            <img className="logo" src="https://gemini.com/wp-content/uploads/2016/02/gemini_symbol_rgb.png" alt="" />
+          </span>
           <span 
             className="selected">
             Signed In 
