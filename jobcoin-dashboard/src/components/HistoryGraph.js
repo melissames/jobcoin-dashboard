@@ -5,20 +5,26 @@ import '../stylesheets/historygraph.css';
 const HistoryGraph = props => {
 
   let transactions = [...props.transactions]
-  let balance = parseInt(props.balance)
+  let balance = 0
+  let transactionData = []
+  transactionData[0] = balance
 
-  for(let i = transactions.length -1; i >= 0; i--){
-    if(transactions[i].fromAddress === props.user){
-      balance = balance - parseInt(transactions[i].amount)
-      transactions[i].balance = balance
+  transactions.map(transaction => {
+    if(transaction.fromAddress === props.user){
+      balance = balance - parseInt(transaction.amount)
+      transactionData.push(balance)
     } else {
-      balance = balance + parseInt(transactions[i].amount)
-      transactions[i].balance = balance
+      balance = balance + parseInt(transaction.amount)
+      transactionData.push(balance)
     }
-  }
+  })
 
-  let transactionData = transactions.map(transaction => transaction.balance)
-  let dates = transactions.map(transaction => transaction.timestamp)
+  let dates = transactions.map(function(transaction) {
+    let date = new Date(transaction.timestamp)
+    return new Intl.DateTimeFormat('en-US').format(date)
+  })
+
+  dates.unshift("Account Opened")
 
   const data = {
     labels: dates,

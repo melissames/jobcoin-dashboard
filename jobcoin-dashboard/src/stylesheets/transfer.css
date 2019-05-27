@@ -1,6 +1,6 @@
 .transfer {
     position: absolute;
-    transform: translate(0%, 250%);
+    transform: translate(0%, 80%);
     width: 30%;
     margin-left: 10px;
 }

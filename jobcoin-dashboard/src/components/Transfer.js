@@ -14,8 +14,6 @@ class Transfer extends Component {
 
     formValues[name] = value;
 
-    console.log(formValues)
-
     this.setState({formValues})
   }
 

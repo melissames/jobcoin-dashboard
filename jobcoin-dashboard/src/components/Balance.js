@@ -6,7 +6,7 @@ class Balance extends Component {
   render() {
     return (
       <div className="border balance">
-          <h1>Balance</h1>
+          <h1>Jobcoin Balance</h1>
           <p>{this.props.balance}</p>
       </div>
     );
