@@ -56,7 +56,10 @@ class Transfer extends Component {
               step=".00000000000001" 
               name="amount" 
               onChange={this.handleChange}/>
-           <input className="button form-spacing" type="submit" value="Send Jobcoins"/>
+           <input 
+              className="button form-spacing" 
+              type="submit" 
+              value="Send Jobcoins"/>
          </form>
       </div>
     );

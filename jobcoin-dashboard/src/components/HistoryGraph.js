@@ -17,6 +17,14 @@ const HistoryGraph = props => {
       balance = balance + parseInt(transaction.amount)
       transactionData.push(balance)
     }
+    const timeOptions = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    }
   })
 
   const timeOptions = {
@@ -32,9 +40,6 @@ const HistoryGraph = props => {
     let date = new Date(transaction.timestamp)
     return new Intl.DateTimeFormat('en-US', timeOptions).format(date)
   })
-
-
-
   dates.unshift("Account Opened")
 
   const data = {
