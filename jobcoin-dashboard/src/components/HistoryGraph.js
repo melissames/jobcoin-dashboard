@@ -17,14 +17,6 @@ const HistoryGraph = props => {
       balance = balance + parseInt(transaction.amount)
       transactionData.push(balance)
     }
-    const timeOptions = {
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
-    }
   })
 
   const timeOptions = {
